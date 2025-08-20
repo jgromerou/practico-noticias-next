@@ -4,6 +4,11 @@ import Link from 'next/link';
 import {noticias} from '../../data/datos';
 import Image from 'next/image';
 
+export const metadata = {
+  title: "Home | News",
+  description: "Página de Noticias de última hora."
+}
+
 export default function Home() {
 
 
@@ -27,7 +32,7 @@ export default function Home() {
                     <p>{new Date(noticia.published_at).toLocaleDateString()}</p>
                     <p className='ml-3'>📰{noticia.source}</p>
                   </div>
-                  <Link href={`/new/${noticia.uuid}`} className='my-3 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-800'>Leer Más</Link>
+                  <Link href={`/new/${noticia.title}`} className='my-3 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-800'>Leer Más</Link>
                  </div>
                 </article>
               ))
